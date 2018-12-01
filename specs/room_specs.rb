@@ -8,8 +8,8 @@ class RoomTest < MiniTest::Test
   def setup
     playlist1 = [@song1, @song2]
     playlist2 = [@song3, @song4]
-    @room1 = Room.new("Punk", playlist1)
-    @room2 =Room.new("Reggae", playlist2)
+    @room1 = Room.new("Punk", playlist1, 2)
+    @room2 =Room.new("Reggae", playlist2, 2)
   end
 
   def test_room_has_name
@@ -20,5 +20,8 @@ class RoomTest < MiniTest::Test
     assert_equal(2, @room1.playlist.length())
   end
 
+  def test_room_has_capacity
+    assert_equal(2, @room1.capacity())
+  end
 
 end
